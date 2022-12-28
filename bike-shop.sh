@@ -95,7 +95,11 @@ RENT_MENU() {
           # VALUES ('$CUSTOMER_NAME, '$PHONE_NUMBER)';"
           # INSERT_CUSTOMER_RESULT=$($PSQL "$QUERY");
         fi
-
+        # get customer_id
+        # insert bike rental
+        # set bike availability to false
+        # get bike info
+        # send to main menu
       fi
     fi
 
