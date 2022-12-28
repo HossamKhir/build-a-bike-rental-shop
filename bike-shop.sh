@@ -90,12 +90,19 @@ RENT_MENU() {
           read CUSTOMER_NAME
 
           # insert new customer
-          INSERT_CUSTOMER_RESULT=$($PSQL "INSERT INTO customers(name, phone) VALUES ('$CUSTOMER_NAME', '$PHONE_NUMBER');");
+          INSERT_CUSTOMER_RESULT=$($PSQL "INSERT INTO customers(name, phone) VALUES ('$CUSTOMER_NAME', '$PHONE_NUMBER');")
           # QUERY="INSERT INTO customers(name, phone)
           # VALUES ('$CUSTOMER_NAME, '$PHONE_NUMBER)';"
           # INSERT_CUSTOMER_RESULT=$($PSQL "$QUERY");
         fi
         # get customer_id
+        CUSTOMER_ID=$($PSQL "SELECT customer_id FROM customers WHERE phone = '$PHONE_NUMBER';")
+
+        # QUERY="SELECT customer_id
+        # FROM customers
+        # WHERE phone = '$PHONE_NUMBER';"
+        # CUSTOMER_ID=$($PSQL "$QUERY")
+
         # insert bike rental
         # set bike availability to false
         # get bike info
