@@ -41,7 +41,10 @@ RENT_MENU(){
   ORDER BY bike_id;";
   AVAILABLE_BIKES=$($PSQL "$QUERY");
   # if no bikes available
+  if [[ -z $AVAILABLE_BIKES ]]
+  then
     # send to main menu
+  fi
 }
 
 RETURN_MENU() {
