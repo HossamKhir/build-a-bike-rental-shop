@@ -121,6 +121,7 @@ RENT_MENU() {
         # FROM bikes
         # WHERE bike_id = $BIKE_ID_TO_RENT;"
         # BIKE_INFO=$($PSQL "$QUERY")
+        echo $BIKE_INFO
 
         # send to main menu
       fi
