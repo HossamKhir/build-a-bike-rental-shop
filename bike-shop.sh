@@ -91,7 +91,9 @@ RENT_MENU() {
 
           # insert new customer
           INSERT_CUSTOMER_RESULT=$($PSQL "INSERT INTO customers(name, phone) VALUES ('$CUSTOMER_NAME', '$PHONE_NUMBER');");
-          
+          # QUERY="INSERT INTO customers(name, phone)
+          # VALUES ('$CUSTOMER_NAME, '$PHONE_NUMBER)';"
+          # INSERT_CUSTOMER_RESULT=$($PSQL "$QUERY");
         fi
 
       fi
