@@ -52,6 +52,10 @@ RENT_MENU() {
     if [[ ! $BIKE_ID_TO_RENT =~ ^[0-9]+$ ]]; then
       # send to main menu
       MAIN_MENU "That is not a valid bike number."
+    else
+      # get bike availability
+      # if not available
+      # send to main menu
     fi
 
   fi
