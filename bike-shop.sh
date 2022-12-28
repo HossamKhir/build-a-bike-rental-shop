@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # PSQL="psql -X --username=freecodecamp --dbname=bikes --tuples-only -c";
-PSQL="psql -X--tuples-only bikes freecodecamp -c";
+PSQL="psql -X --tuples-only bikes freecodecamp -c";
 
 echo -e "\n~~~~~ Bike Rental Shop ~~~~~\n"
 
