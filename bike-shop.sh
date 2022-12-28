@@ -77,14 +77,18 @@ RENT_MENU() {
         echo -e "\nWhat's your phone number?"
         read PHONE_NUMBER
 
-        CUSTOMER_NAME=$($PSQL "SELECT name FROM customers WHERE phone = '$PHONE_NUMBER';");
+        CUSTOMER_NAME=$($PSQL "SELECT name FROM customers WHERE phone = '$PHONE_NUMBER';")
         # QUERY="SELECT name
         # FROM customers
         # WHERE phone = $PHONE_NUMBER;";
         # CUSTOMER_NAME=$($PSQL "$QUERY");
+
         # if customer doesn't exist
-        # get new customer name
-        # insert new customer
+        if [[ -z $CUSTOMER_NAME ]]; then
+          # get new customer name
+          # insert new customer
+        fi
+
       fi
     fi
 
