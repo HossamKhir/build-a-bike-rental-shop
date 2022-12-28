@@ -32,6 +32,13 @@ MAIN_MENU() {
 RENT_MENU() {
   # get available bikes
   AVAILABLE_BIKES=$($PSQL "SELECT bike_id, type, size FROM bikes WHERE available = true ORDER BY bike_id")
+  # QUREY="SELECT bike_id,
+  #   type,
+  #   size
+  # FROM bikes
+  # WHERE available = true
+  # ORDER BY bike_id;"
+  # AVAILABLE_BIKES=$($PSQL "$QUERY");
 
   # if no bikes available
   if [[ -z $AVAILABLE_BIKES ]]; then
@@ -55,11 +62,12 @@ RENT_MENU() {
     else
       # get bike availability
       BIKE_AVAILABILITY=$($PSQL "SELECT available FROM bikes WHERE bike_id = $BIKE_ID_TO_RENT AND available = true;")
-      QUERY="SELECT available
-      FROM bikes
-      WHERE bike_id = $BIKE_ID_TO_RENT
-        AND available = true;"
-      BIKE_AVAILABILITY=$($PSQL "$QUERY")
+      # QUERY="SELECT available
+      # FROM bikes
+      # WHERE bike_id = $BIKE_ID_TO_RENT
+      #   AND available = true;"
+      # BIKE_AVAILABILITY=$($PSQL "$QUERY")
+      echo $BIKE_AVAILABILITY;
       # if not available
       # send to main menu
     fi
