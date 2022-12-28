@@ -149,7 +149,9 @@ RETURN_MENU() {
     echo "$CUSTOMER_RENTALS"
 
     # if no rentals
-    # send to main menu
+    if [[ -z $CUSTOMER_RENTALS ]]; then
+      # send to main menu
+    fi
   fi
 }
 
