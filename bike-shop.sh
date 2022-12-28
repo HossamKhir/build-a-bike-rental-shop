@@ -86,7 +86,8 @@ RENT_MENU() {
         # if customer doesn't exist
         if [[ -z $CUSTOMER_NAME ]]; then
           # get new customer name
-          echo -e "\nWhat's your name?";
+          echo -e "\nWhat's your name?"
+          read CUSTOMER_NAME
           # insert new customer
         fi
 
