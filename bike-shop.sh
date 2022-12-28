@@ -103,11 +103,18 @@ RENT_MENU() {
         # CUSTOMER_ID=$($PSQL "$QUERY")
 
         # insert bike rental
-        INSERT_RENTAL_RESULT=$($PSQL "INSERT INTO rentals(customer_id, bike_id) VALUES ($CUSTOMER_ID, $BIKE_ID_TO_RENT)");
+        INSERT_RENTAL_RESULT=$($PSQL "INSERT INTO rentals(customer_id, bike_id) VALUES ($CUSTOMER_ID, $BIKE_ID_TO_RENT);")
         # QUERY="INSERT INTO rentals(customer_id, bike_id)
         # VALUES ($CUSTOMER_ID, $BIKE_ID_TO_RENT);"
         # INSERT_RENTAL_RESULT=$($PSQL "$QUERY");
+
         # set bike availability to false
+        SET_TO_FALSE_RESULT=$($PSQL "UPDATE bikes SET available = false WHERE bike_id = $BIKE_ID_TO_RENT;")
+        # QUERY="UPDATE bikes
+        # SET available = false
+        # WHERE bike_id = $BIKE_ID_TO_RENT;"
+        # SET_TO_FALSE_RESULT=$($PSQL "$QUERY")
+
         # get bike info
         # send to main menu
       fi
