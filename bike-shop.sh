@@ -173,6 +173,7 @@ RETURN_MENU() {
         # if input not rented
         if [[ -z $RENTAL_ID ]]; then
           # send to main menu
+          MAIN_MENU 'You do not have that bike rented.'
         fi
       fi
     fi
