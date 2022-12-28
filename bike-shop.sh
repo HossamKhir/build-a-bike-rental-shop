@@ -116,6 +116,12 @@ RENT_MENU() {
         # SET_TO_FALSE_RESULT=$($PSQL "$QUERY")
 
         # get bike info
+        BIKE_INFO=$($PSQL "SELECT size, type FROM bikes WHERE bike_id = $BIKE_ID_TO_RENT;")
+        # QUERY="SELECT size, type
+        # FROM bikes
+        # WHERE bike_id = $BIKE_ID_TO_RENT;"
+        # BIKE_INFO=$($PSQL "$QUERY")
+
         # send to main menu
       fi
     fi
