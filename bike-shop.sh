@@ -16,4 +16,7 @@ RETURN_MENU() {
   echo "Return Menu";
 }
 
+EXIT() {
+}
+
 MAIN_MENU
